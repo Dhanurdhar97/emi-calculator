@@ -34,6 +34,7 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
     var yearTotal = 0;
     var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     var datepickerObj;
+    var c = 0;
     var intl = new ej2_base_1.Internationalization();
     var legendSettings = {
         textStyle: {
@@ -47,14 +48,29 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
     function getCurrencyVal(value) {
         return "&#8377;" + intl.formatNumber(value);
     }
+    function getLoanType() {
+        var loanType = 1;
+        var hash = window.location.hash;
+        if (hash === '#home-loan') {
+            loanType = 2;
+        }
+        else if (hash === '#vehicle-loan') {
+            loanType = 3;
+        }
+        return loanType;
+    }
     function renderSliderControls() {
+        var loanType = getLoanType();
+        var value = loanType === 1 ? 300000 : loanType == 2 ? 4000000 : 600000;
+        var max = loanType === 1 ? 500000 : loanType == 2 ? 9000000 : 1000000;
+        var step = loanType === 1 ? 100000 : loanType == 2 ? 1000000 : 100000;
         pricipalObj2 = new ej2_inputs_1.Slider({
             min: 0,
-            value: 300000,
-            max: 500000,
-            step: 10000,
+            value: value,
+            max: max,
+            step: step,
             type: 'MinRange',
-            ticks: { placement: 'After', largeStep: 100000, smallStep: 10000, showSmallTicks: false, format: 'c0' },
+            ticks: { placement: 'After', largeStep: step, smallStep: step, showSmallTicks: false, format: 'c0' },
             change: function () {
                 principal.setProperties({ value: pricipalObj2.value });
                 setInitValues();
@@ -63,10 +79,23 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
                 refreshUI();
             },
             renderingTicks: function (args) {
-                var num = Number(args.value) / 1000;
-                args.text = num === 0 ? ('' + num) : (num + 'K');
+                console.log("asdfghygdfs", c++);
+                if (loanType === 1) {
+                    var num = Number(args.value) / step;
+                    args.text = num === 0 ? ('' + num) : (num + 'L');
+                }
+                else if (loanType === 2) {
+                    var num = Number(args.value) / step;
+                    args.text = num === 0 ? ('' + num) : (num + '0L');
+                }
+                else if (loanType === 3) {
+                    console.log("asdfghygdfs1", Number(args.value));
+                    var num = Number(args.value) / (step);
+                    args.text = num === 0 ? ('' + num) : (num + 'L');
+                }
             }
         });
+        console.log('principla obj ', pricipalObj2);
         pricipalObj2.appendTo('#pricipal');
         loantenureObj = new ej2_inputs_1.Slider({
             min: 0,
@@ -102,6 +131,17 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
         interestrateObj1.appendTo('#interestrate');
     }
     function renderInputControls() {
+        var loanType = getLoanType();
+        var selected = document.getElementById('loan' + loanType);
+        for (var i = 1; i < 4; i++) {
+            if (loanType !== i) {
+                document.getElementById('loan' + loanType).classList.remove('activeTab');
+            }
+        }
+        selected.classList.add("activeTab");
+        var value = loanType === 1 ? 300000 : loanType == 2 ? 4000000 : 600000;
+        var max = loanType === 1 ? 500000 : loanType == 2 ? 9000000 : 1000000;
+        var step = loanType === 1 ? 100000 : loanType == 2 ? 1000000 : 100000;
         renderSliderControls();
         monthValue = new ej2_buttons_1.RadioButton({
             label: 'Month', name: 'tenure', value: 'month',
@@ -147,9 +187,9 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
         yearValue.appendTo('#radio2');
         principal = new ej2_inputs_2.NumericTextBox({
             min: 10000,
-            value: 300000,
-            max: 5000000,
-            step: 10000,
+            value: value,
+            max: max,
+            step: step,
             change: function (args) {
                 if (args.isInteraction) {
                     pricipalObj2.setProperties({ value: principal.value });
@@ -159,6 +199,7 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
             width: '200px'
         });
         principal.appendTo('#principal_txt');
+        document.getElementById('principal_txt').style.background = 'none';
         interest = new ej2_inputs_2.NumericTextBox({
             min: 0,
             value: 5.5,
@@ -589,7 +630,7 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
             refreshUI();
         }
     }
-    window.default = function () {
+    function init() {
         renderInputControls();
         datepickerObj = new ej2_calendars_1.DatePicker({
             start: 'Year',
@@ -619,6 +660,12 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
             destroyComponents();
             window.destroy = null;
         };
+    }
+    window.onhashchange = function () {
+    };
+    window.default = function () {
+        console.log("sadfgrse1");
+        init();
     };
     function destroyComponents() {
         pricipalObj2.destroy();

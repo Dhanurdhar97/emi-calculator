@@ -17,12 +17,41 @@ addRoute('/about', () => {
     });
 });
 addRoute('/default', () => {
+    console.log()
     let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
     ajaxHTML.send().then((value: Object): void => {
         document.getElementById('content').innerHTML = value.toString();
         window.default();
     });
 });
+addRoute('/home-loan', () => {
+    console.log()
+    let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
+    ajaxHTML.send().then((value: Object): void => {
+        document.getElementById('content').innerHTML = value.toString();
+        window.default();
+    });
+});
+
+addRoute('/personal-loan', () => {
+    console.log()
+    let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
+    ajaxHTML.send().then((value: Object): void => {
+        document.getElementById('content').innerHTML = value.toString();
+        window.default();
+    });
+});
+
+addRoute('/vehicle-loan', () => {
+    console.log()
+    let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
+    ajaxHTML.send().then((value: Object): void => {
+        document.getElementById('content').innerHTML = value.toString();
+        window.default();
+    });
+});
+
+
 hasher.initialized.add((h: string) => {
     parse(h);
 });
