@@ -1,0 +1,136 @@
+<div class="row left-content-wrap" style="background-color: #ffffff;">
+        <div class="left-content col-lg-7">
+            <div class="row form-space">
+                <div class="col-lg-12">
+                    <div class="content-space">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label class="pricipal">Loan Amount For Dhanur</label>
+                                </td>
+                                <td>
+                                    <div class="editor-space">
+                                        <input id="principal_txt" type="tel" style="
+                                        background-image: url(http://i.stack.imgur.com/vJZ9m.png);
+                                        display: block;
+                                        display: block;
+                                        background-position: left;
+                                      
+                                        display:block;
+                                        background-repeat: no-repeat;
+                                    ">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="pricipal"></div>
+                </div>
+            </div>
+            <div class="row form-space">
+                <div class="col-lg-12">
+                    <div class="content-space">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label class="interestrate">Interest Rate</label>
+                                </td>
+                                <td>
+                                    <div class="editor-space">
+                                        <input id="interest_txt">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="interestrate"></div>
+                </div>
+            </div>
+            <div class="row form-space">
+                <div class="col-lg-12">
+                    <div class="content-space">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label class="loantenure">Loan Term</label>
+                                    <ul class="tenure-value" style="float: left;">
+                                        <li>
+                                            <input type="radio" id="radio1" name="tenure" value="month">
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="radio2" name="tenure" value="year">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="editor-space">
+                                        <input id="loan_txt">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="loantenure"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 emi-content" style="bgcolor= #E6E6FA">
+            <div>
+                <h6 class="emi-header">Break-up of Total Payment</h6>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="col-lg-12 pie-content" id="pieContent">
+                                
+                                    <p style="float: left;">Principal Amount <h5 style="text-align: right" id="loan_principal" ></h5></p>
+                                    
+                                
+                               
+                                    <p style="float: left;">Total Interest<h5 style="text-align: right" id="loan_interest"></h5></p>
+                                    
+                                
+                                    <span style="float: left;">
+                                        <p style="text-align: left">Total Payment</p>
+                                        <p style="font-size:1rem ">(Principal + Interest)</p>
+                                    </span>
+
+                                    
+                                    <h5 style="text-align: right" id="loan_total_payment"></h5>
+                                    <p style="float: left;">Your Monthly Payment<h5 style="text-align: right" id="loan_emi"></h5></p>
+  
+                            </div>
+                    <div id="payment_pieChart"></div>
+                </div>
+                
+            </div>            
+           
+        </div>
+    
+</div>
+
+<div class="row top-space loan-content max-content" style="display: none;">
+    <h6 class="center-heading">Amortization Chart</h6>
+    <div class="col-lg-12 graph-container">
+        <div id="paymentGraph" class="component-content"></div>
+    </div>
+</div>
+<div class="row top-space loan-content max-content" style="display: none;">
+    <h6 class="center-heading">Amortization Schedule</h6>
+    <div id="scheduleGrid" class="schedule-grid"></div>
+</div>
+<svg style="height: 0; width: 0;">
+    <defs>
+        <linearGradient id="principal_svg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="interest_svg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+<script id="columntemplate" type="text/x-template">
+    <div class="e-icons e-icon-grightarrow e-row-toggle"></div>
+    <span style="padding-left: 12px;">${year}</span>
+</script>
