@@ -225,7 +225,7 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
             },
             height: '365px',
             width: '100%',
-            tooltip: { enable: false },
+            tooltip: { enable: true },
             load: function (args) {
                 var selectedTheme = location.hash.split('/')[1];
                 selectedTheme = selectedTheme ? selectedTheme : 'Material';

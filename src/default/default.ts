@@ -259,7 +259,7 @@ function renderVisalComponents(): void {
         },
         height: '365px',
         width: '100%',
-        tooltip: { enable: false },
+        tooltip: { enable: true },
         load: (args: IAccLoadedEventArgs) => {
             let selectedTheme: string = location.hash.split('/')[1];
             selectedTheme = selectedTheme ? selectedTheme : 'Material';
