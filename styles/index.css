@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .content-space {
   display: block;
   margin-top: 25px;
@@ -137,7 +138,7 @@
 }
 
 .pie-content .pie-icon.pie-interest {
-  background: linear-gradient(to top, #2b82ff, #0462ff);
+  background: linear-gradient(to top, red, red);
 }
 
 .pie-content h5 {
@@ -194,12 +195,12 @@
 }
 
 .tenure-value .e-radio + label::before, .tenure-value .e-radio + label:hover::before {
-  border-color: #0462ff;
+  border-color: #2196F3;
   background-color: #f2f2f2;
 }
 
 .tenure-value .e-radio + label::after, .tenure-value .e-radio + label:hover::after {
-  background-color: #0462ff;
+  background-color: #2196F3;
 }
 
 .tenure-value .e-radio + label .e-label {
@@ -210,12 +211,12 @@
 }
 
 .tenure-value .e-radio:focus + label::before {
-  border-color: #0462ff;
+  border-color: #2196F3;
   background-color: #f2f2f2;
 }
 
 .tenure-value .e-radio:focus + label::after {
-  background-color: #0462ff;
+  background-color: #2196F3;
 }
 
 .tenure-value > li {
@@ -245,7 +246,7 @@ li {
 }
 
 .main-content .loan-content {
-  background-color: #2196F3;
+  background-color: #ffffff;
   color: #000000;
 }
 
@@ -275,7 +276,7 @@ li {
   border-radius: 30px;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.12);
   border: solid 4px #ffffff;
-  background-color: #FF5722;
+  background-color: #2196F3;
 }
 
 .main-content .e-slider-container .e-slider .e-handle::before {
@@ -293,7 +294,7 @@ li {
 }
 
 .main-content .e-slider-container .e-slider .e-range {
-  background-color: #0462ff;
+  background-color: #2196F3;
   top: calc(50% - 5px);
 }
 
@@ -373,7 +374,7 @@ li {
 }
 
 .main-content .e-grid {
-  border-color: #2196F3;
+  border-color: #ffffff;
   border-radius: 10;
 }
 
@@ -470,21 +471,21 @@ li {
 }
 
 #principal_svg stop[offset="1"] {
-  stop-color: #e5e5e5;
-  border: #e5e5e5;
+  stop-color: #BDBDBD;
+  border: #BDBDBD;
 }
 
 #interest_svg stop {
-  stop-color: #e5e5e5;
-  border: #e5e5e5;
+  stop-color: #BDBDBD;
+  border: #BDBDBD;
 }
 
 #interest_svg stop[offset="0"] {
-  stop-color: #0462ff;
+  stop-color: #1976D2;
 }
 
 #interest_svg stop[offset="1"] {
-  stop-color: #2b82ff;
+  stop-color: #1976D2;
 }
 
 .navbar-right {
@@ -520,12 +521,12 @@ h6 {
 }
 
 body {
-  background-color: #FF5722;
+  background-color: #f2f2f2;
   color: #000000;
 }
 
 .left-content {
-  background-color: #2196F3;
+  background-color: #ffffff;
   max-height: 660px;
   margin: 25px 0;
   padding: 0 44px;
@@ -533,7 +534,7 @@ body {
 }
 
 .header-style {
-  background: #FF5722;
+  background: #1976D2;
   color: white;
   margin: 0;
   padding: 15px;
@@ -826,6 +827,115 @@ body {
   display: inline-block;
 }
 
+a {
+  color: #1976D2;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .activeTab {
-  background: red;
+  background: #1976D2;
+  color: #ffffff !important;
+}
+
+.activeTab:hover {
+  background: #1976D2;
+  color: #ffffff !important;
+}
+
+.nav > li > a {
+  padding: 10px 7px !important;
+}
+
+.nav > li > a:hover {
+  background: #1976D2;
+  color: #ffffff !important;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+
+.option-input:hover {
+  background: #9faab7;
+}
+
+.option-input:checked {
+  background: #2196F3;
+}
+
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 16.66667px;
+  text-align: center;
+}
+
+.option-input:checked::after {
+  background: #2196F3;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+}
+
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+.option-input.radio {
+  margin-top: -15px;
+}
+
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
 }

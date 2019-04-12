@@ -1,19 +1,19 @@
 //sass-lint:disable-all
 $border-color: #e4e2e2;
-$bg-color: #FF5722;
-$body-bg-color: #FF5722;
-$header-bg-color:#FF5722;
+$bg-color: #f2f2f2;
+$body-bg-color: #f2f2f2;
+$header-bg-color:#1976D2;
 $header-font-color: rgb(255, 255, 255);
 $input-bg-color: #f2f2f2;
 $input-font-color: #000;
 $input-icon-color: #95979c;
 $input-border-color:#e0e0e0;
-$main-bg-color:#2196F3;
+$main-bg-color:#ffffff;
 $text-color: #000000;
 $text-color1: #989CA9;
 $text-color2: #000000;
 $header-color: #4a4a4a 100%;
-$range-color: #0462ff;
+$range-color: #2196F3;
 $slider-color: #f8f8f8;
 $row-bg-color: #27304c;
 $altrow-bg-color: #313B5A;
@@ -21,7 +21,7 @@ $row-font-color: #000;
 $hover-color: #404D75;
 $active-color: #5B6BC0;
 $principal-color: #e5e5e5;
-$interest-color: linear-gradient(to top, #2b82ff, #0462ff);
+$interest-color: linear-gradient(to top, red , red);
 $tick-color: #ABABAB;
 
 @mixin Raleway-600 {
@@ -344,7 +344,7 @@ li {
         border-radius: 30px;
         box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.12);
         border: solid 4px #ffffff;
-        background-color: #FF5722;
+        background-color: #2196F3;
 
         &::before {
           content: '';
@@ -546,21 +546,21 @@ li {
 }
 
 #principal_svg stop[offset="1"] {
-    stop-color: #e5e5e5;    border: #e5e5e5;
+    stop-color: #BDBDBD;    border: #BDBDBD;
 
 }
 
 #interest_svg stop {
-    stop-color: #e5e5e5;    border: #e5e5e5;
+    stop-color: #BDBDBD;    border: #BDBDBD;
 
 }
 
 #interest_svg stop[offset="0"] {
-    stop-color:#0462ff;
+    stop-color:#1976D2;
 }
 
 #interest_svg stop[offset="1"] {
-    stop-color: #2b82ff;
+    stop-color: #1976D2;
 }
 
 .navbar-right {
@@ -915,10 +915,102 @@ body {
 }
 .e-grid .e-row .e-row-toggle { 
   display: inline-block;
-<<<<<<< HEAD
-=======
+
+}
+a{
+  color:#1976D2;
+  font-size: 16px;
+  font-weight: 400;
 }
 .activeTab{
-  background: red;
->>>>>>> master
+  background:#1976D2;
+  color:#ffffff !important;
+}
+.activeTab:hover{
+  background:#1976D2;
+  color:#ffffff !important;
+}
+.nav>li>a{
+  padding: 10px 7px !important;
+}
+.nav>li>a:hover{
+  background:#1976D2;
+  color:#ffffff !important;
+}
+*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #2196F3;
+}
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 16.66667px;
+  text-align: center;
+}
+.option-input:checked::after {
+  background: #2196F3;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+.option-input.radio{
+  margin-top:-15px;
+}
+.no-focus-outline a:focus,
+.no-focus-outline button:focus {
+  outline: none;
 }
