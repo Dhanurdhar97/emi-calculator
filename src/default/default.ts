@@ -56,9 +56,9 @@ let beginBalance: number;
 let yearTotal: number = 0;
 let monthNames: [string] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 let datepickerObj: DatePicker;
-
+let c=0;
 let intl: Internationalization = new Internationalization();
-//intl.
+
 let legendSettings: Object = {
     textStyle: {
         color: '#FFFFFF',
@@ -77,14 +77,39 @@ function getCurrencyVal(value: number): string {
 
 }
 
+function getLoanType():Object{
+
+    let loanType=1;
+
+    let hash=window.location.hash;
+
+    if(hash==='#home-loan'){
+        loanType=2;
+    }else if(hash==='#vehicle-loan'){
+        loanType=3;
+    }
+
+    return loanType;
+}
+
+
 function renderSliderControls(): void {
+
+
+
+    let loanType=getLoanType();
+
+    let value=loanType===1?300000:loanType==2?4000000:600000;
+    let max=loanType===1?500000:loanType==2?9000000:1000000;
+    let step=loanType===1?100000:loanType==2?1000000:100000;
+
     pricipalObj2 = new Slider({
         min: 0,
-        value: 300000,
-        max: 500000,
-        step: 10000,
+        value: value,
+        max:max,
+        step: step,
         type: 'MinRange',
-        ticks: { placement: 'After', largeStep: 100000, smallStep: 10000, showSmallTicks: false, format: 'c0' },
+        ticks: { placement: 'After', largeStep: step, smallStep: step, showSmallTicks: false, format: 'c0' },
         change: () => {
             principal.setProperties({ value: pricipalObj2.value });
             setInitValues();
@@ -93,10 +118,23 @@ function renderSliderControls(): void {
             refreshUI();
         },
         renderingTicks: (args: SliderTickEventArgs) => {
-            let num: number = Number(args.value) / 1000;
-            args.text = num === 0 ?  ('' + num) : (num + 'K');
+            console.log("asdfghygdfs", c++);
+            if(loanType===1) {
+                let num: number = Number(args.value) / step;
+                args.text = num === 0 ? ('' + num) : (num + 'L');
+            }else if(loanType===2){
+                let num: number = Number(args.value) / step;
+                args.text = num === 0 ? ('' + num) : (num + '0L');
+            }else if(loanType===3){
+                console.log("asdfghygdfs1", Number(args.value));
+                let num: number = Number(args.value) / (step);
+                args.text = num === 0 ? ('' + num) : (num + 'L');
+            }
         }
     });
+    console.log('principla obj ',pricipalObj2);
+    // document.getElementById('pricipal').innerHTML='';
+    // pricipalObj2.appendTo('#pricipal');
     pricipalObj2.appendTo('#pricipal');
     loantenureObj = new Slider({
         min: 0,
@@ -113,6 +151,7 @@ function renderSliderControls(): void {
             refreshUI();
         }
     });
+    //document.getElementById('loantenure').innerHTML='';
     loantenureObj.appendTo('#loantenure');
     interestrateObj1 = new Slider({
         min: 0,
@@ -129,9 +168,26 @@ function renderSliderControls(): void {
             refreshUI();
         }
     });
+    //document.getElementById('interestrate').innerHTML='';
     interestrateObj1.appendTo('#interestrate');
 }
 function renderInputControls(): void {
+
+    let loanType=getLoanType();
+
+    let selected=document.getElementById('loan' + loanType);
+
+
+    for (let i = 1; i < 4; i++) {
+        if (loanType !== i) {
+            document.getElementById('loan' + loanType).classList.remove('activeTab');
+        }
+    }
+    selected.classList.add("activeTab");
+
+    let value=loanType===1?300000:loanType==2?4000000:600000;
+    let max=loanType===1?500000:loanType==2?9000000:1000000;
+    let step=loanType===1?100000:loanType==2?1000000:100000;
     renderSliderControls();
     monthValue = new RadioButton({
         label: 'Month', name: 'tenure', value: 'month',
@@ -178,9 +234,9 @@ function renderInputControls(): void {
     yearValue.appendTo('#radio2');
     principal = new NumericTextBox({
         min: 10000,
-        value: 300000,
-        max: 5000000,
-        step: 10000,
+        value: value,
+        max: max,
+        step: step,
         //format: '&#8377;',
         change: (args: ChangeEventArgs) => {
             if (args.isInteraction) {
@@ -191,7 +247,7 @@ function renderInputControls(): void {
         width: '200px'
     });
     principal.appendTo('#principal_txt');
-    
+    document.getElementById('principal_txt').style.background = 'none';
     interest = new NumericTextBox({
         min: 0,
         value: 5.5,
@@ -259,7 +315,7 @@ function renderVisalComponents(): void {
         },
         height: '365px',
         width: '100%',
-        tooltip: { enable: false },
+        tooltip: { enable: true },
         load: (args: IAccLoadedEventArgs) => {
             let selectedTheme: string = location.hash.split('/')[1];
             selectedTheme = selectedTheme ? selectedTheme : 'Material';
@@ -643,7 +699,7 @@ function dateChanged(): void {
         refreshUI();
     }
 }
-window.default = () => {
+function init():void{
     renderInputControls();
     datepickerObj = new DatePicker({
         start: 'Year',
@@ -677,6 +733,15 @@ window.default = () => {
         destroyComponents();
         window.destroy = null;
     };
+}
+window.onhashchange = function() {
+
+};
+
+
+window.default = () => {
+    console.log("sadfgrse1")
+    init();
 };
 
 function destroyComponents(): void {
