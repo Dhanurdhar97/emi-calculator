@@ -194,12 +194,12 @@
 }
 
 .tenure-value .e-radio + label::before, .tenure-value .e-radio + label:hover::before {
-  border-color: #2962ff;
+  border-color: #0462ff;
   background-color: #f2f2f2;
 }
 
 .tenure-value .e-radio + label::after, .tenure-value .e-radio + label:hover::after {
-  background-color: #2962ff;
+  background-color: #0462ff;
 }
 
 .tenure-value .e-radio + label .e-label {
@@ -210,12 +210,12 @@
 }
 
 .tenure-value .e-radio:focus + label::before {
-  border-color: #2962ff;
+  border-color: #0462ff;
   background-color: #f2f2f2;
 }
 
 .tenure-value .e-radio:focus + label::after {
-  background-color: #2962ff;
+  background-color: #0462ff;
 }
 
 .tenure-value > li {
@@ -245,7 +245,7 @@ li {
 }
 
 .main-content .loan-content {
-  background-color: #ffffff;
+  background-color: #2196F3;
   color: #000000;
 }
 
@@ -275,7 +275,7 @@ li {
   border-radius: 30px;
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.12);
   border: solid 4px #ffffff;
-  background-color: #2962ff;
+  background-color: #FF5722;
 }
 
 .main-content .e-slider-container .e-slider .e-handle::before {
@@ -288,8 +288,12 @@ li {
   left: 5px;
 }
 
+.main-content .e-slider-container .e-slider .e-handle-first {
+  margin-top: -4px;
+}
+
 .main-content .e-slider-container .e-slider .e-range {
-  background-color: #2962ff;
+  background-color: #0462ff;
   top: calc(50% - 5px);
 }
 
@@ -344,6 +348,12 @@ li {
   background-color: #f2f2f2;
   color: #000;
   border-radius: 100px !important;
+  padding: 0 20px 0 !important;
+}
+
+.main-content .left-content .col-lg-12 {
+  padding: 12px 20px 18px 20px;
+  border-color: #000;
 }
 
 .main-content .graph-text {
@@ -363,7 +373,7 @@ li {
 }
 
 .main-content .e-grid {
-  border-color: #ffffff;
+  border-color: #2196F3;
   border-radius: 10;
 }
 
@@ -510,12 +520,12 @@ h6 {
 }
 
 body {
-  background-color: #e7e7e7;
+  background-color: #FF5722;
   color: #000000;
 }
 
 .left-content {
-  background-color: #ffffff;
+  background-color: #2196F3;
   max-height: 660px;
   margin: 25px 0;
   padding: 0 44px;
@@ -523,7 +533,7 @@ body {
 }
 
 .header-style {
-  background: #e7e7e7;
+  background: #FF5722;
   color: white;
   margin: 0;
   padding: 15px;

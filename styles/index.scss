@@ -1,19 +1,19 @@
 //sass-lint:disable-all
 $border-color: #e4e2e2;
-$bg-color: #e7e7e7;
-$body-bg-color: #e7e7e7;
-$header-bg-color:#e7e7e7;
+$bg-color: #FF5722;
+$body-bg-color: #FF5722;
+$header-bg-color:#FF5722;
 $header-font-color: rgb(255, 255, 255);
 $input-bg-color: #f2f2f2;
 $input-font-color: #000;
 $input-icon-color: #95979c;
 $input-border-color:#e0e0e0;
-$main-bg-color:#ffffff;
+$main-bg-color:#2196F3;
 $text-color: #000000;
 $text-color1: #989CA9;
 $text-color2: #000000;
 $header-color: #4a4a4a 100%;
-$range-color: #2962ff;
+$range-color: #0462ff;
 $slider-color: #f8f8f8;
 $row-bg-color: #27304c;
 $altrow-bg-color: #313B5A;
@@ -344,7 +344,7 @@ li {
         border-radius: 30px;
         box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.12);
         border: solid 4px #ffffff;
-        background-color: #2962ff;
+        background-color: #FF5722;
 
         &::before {
           content: '';
@@ -356,6 +356,10 @@ li {
           top: 5px;
           left: 5px;
         }
+      }
+
+      .e-handle-first{
+        margin-top: -4px;
       }
 
       .e-range {
@@ -413,10 +417,13 @@ li {
       background-color: $input-bg-color;
       color: $input-font-color;
       border-radius: 100px !important;
-
+      padding: 0 20px 0 !important;
     }
   }
-
+  .left-content .col-lg-12 {
+    padding: 12px 20px 18px 20px;
+    border-color: #000;
+  }
   .graph-text {
     color: $text-color;
     font-size: 20px;
