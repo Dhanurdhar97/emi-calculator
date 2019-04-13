@@ -17,7 +17,6 @@ addRoute('/about', () => {
     });
 });
 addRoute('/default', () => {
-    console.log()
     let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
     ajaxHTML.send().then((value: Object): void => {
         document.getElementById('content').innerHTML = value.toString();
@@ -25,7 +24,6 @@ addRoute('/default', () => {
     });
 });
 addRoute('/home-loan', () => {
-    console.log()
     let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
     ajaxHTML.send().then((value: Object): void => {
         document.getElementById('content').innerHTML = value.toString();
@@ -34,7 +32,6 @@ addRoute('/home-loan', () => {
 });
 
 addRoute('/personal-loan', () => {
-    console.log()
     let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
     ajaxHTML.send().then((value: Object): void => {
         document.getElementById('content').innerHTML = value.toString();
@@ -43,11 +40,18 @@ addRoute('/personal-loan', () => {
 });
 
 addRoute('/vehicle-loan', () => {
-    console.log()
     let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
     ajaxHTML.send().then((value: Object): void => {
         document.getElementById('content').innerHTML = value.toString();
         window.default();
+    });
+});
+
+addRoute('/credit-score', () => {
+    let ajaxHTML: Ajax = new Ajax('src/default/default.html', 'GET', true);
+    ajaxHTML.send().then((value: Object): void => {
+        document.getElementById('content').innerHTML = value.toString();
+        window.creditScore();
     });
 });
 
@@ -66,6 +70,8 @@ function routeDefault(): void {
 }
 export interface IPages extends Window {
     default: () => void;
+    creditScore:()=>void;
+    updateText:()=>void;
     destroy: () => void;
     about: () => void;
     getDataState: () => DataSketch;

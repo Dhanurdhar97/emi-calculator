@@ -24,6 +24,25 @@
 
 <body>
     <h2 class="header-style">Loan Calculator</h2>
+    <h2 class="header-style" id="lang-header">
+        <button onclick="localStorage.setItem('lang','hi');window.updateText()" style="background:none!important;
+     color:inherit;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     outline: none;
+     border-bottom:1px solid white;
+     cursor: pointer;">हिंदी</button>
+        /
+        <button onclick="localStorage.setItem('lang','en');window.updateText()" style="background:none!important;
+     color:inherit;
+     border:none;
+     padding:0!important;
+     font: inherit;
+      outline: none;
+     border-bottom:1px solid white;
+     cursor: pointer;">English</button>
+    </h2>
     <div class="container main-content" id="content"></div>
 
     <script src="./dist/common.js"></script>
