@@ -9,6 +9,7 @@
         <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan3' href="#vehicle-loan"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/vehicle.png" width="40%"><br>Car Loan</a></li>
         <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan4' href="#credit-score"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/docunent.png" width="40%"><br>Free credit score</a></li>
       </ul></div>
+    <div id="emi-pane">
         <div class="left-content col-lg-7">
             <div class="row form-space">
                 <div class="col-lg-12">
@@ -16,7 +17,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label class="pricipal">Loan Amount</label>
+                                    <label class="pricipal" id="loan_amt">Loan Amount</label>
                                 </td>
                                 <td>
                                     <div class="editor-space">
@@ -44,7 +45,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label class="interestrate">Interest Rate</label>
+                                    <label class="interestrate" id="roi_">Interest Rate</label>
                                 </td>
                                 <td>
                                     <div class="editor-space">
@@ -63,7 +64,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label class="loantenure">Loan Term</label>
+                                    <label class="loantenure" id="loan_term">Loan Term</label>
                                     <ul class="tenure-value">
                                         <li>
                                             <input type="radio" class="option-input radio" id="radio1" name="tenure" value="month">
@@ -72,7 +73,7 @@
                                             <input type="radio" class="option-input radio" id="radio2" name="tenure" value="year">
                                         </li>
                                     </ul>
-                                    
+
                                 </td>
                                 <td>
                                     <div class="editor-space">
@@ -88,24 +89,24 @@
         </div><hr>
         <div class="col-lg-5 emi-content" style="background-color:#ffffff; border-left:2px solid #f2f2f2;">
             <div>
-                <h6 class="emi-header" style="text-align: center;">Break-up of Total Payment</h6>
+                <h6 class="emi-header" id="break-up" style="text-align: center;">Break-up of Total Payment</h6>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                         <div class="col-lg-12 pie-content" id="pieContent" style="padding-top: 5%">
-                            <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; ">Principal Amount <h5 style="text-align: center" id="loan_principal" ></h5></p></div>   
-                             <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; margin-top: 0px;">Total Interest<h5 style="text-align: center" id="loan_interest"></h5></p></div>  
+                            <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; " id="principal_amt">Principal Amount <h5 style="text-align: center" id="loan_principal" ></h5></p></div>
+                             <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; margin-top: 0px;" id="tot_int">Total Interest<h5 style="text-align: center" id="loan_interest"></h5></p></div>
                               <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
                                     <span style="float: center;">
-                                        <p style="text-align: center;">Total Payment</p>
-                                        <p style="font-size:1rem; margin:0 0 0 0;">(Principal + Interest)</p>
+                                        <p style="text-align: center;" id="tot_payment">Total Payment</p>
+                                        <p style="font-size:1rem; margin:0 0 0 0;" id="tot_payment_sub">(Principal + Interest)</p>
                                     </span><br>
                                     <h5 style="text-align: center;margin-top: 0px; " id="loan_total_payment"></h5>
                                 </div>
 
                                     
                              <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
-                                        <p style="text-align: center;">Your Monthly Payment</p><br class="mobileShow"><h5 style="text-align: center;font-size: 50px" id="loan_emi"></h5>
+                                        <p style="text-align: center;" id="ur_monthly_payment">Your Monthly Payment</p><br class="mobileShow"><h5 style="text-align: center;font-size: 50px" id="loan_emi"></h5>
                                 </div>
   
                         </div>
@@ -115,7 +116,14 @@
             </div>            
            
         </div>
-    
+
+    </div>
+</div>
+    <div id="credit_score_pane" style="display: none">
+        <iframe src="" id="credit_score_iframe" width="640" height="1557" frameborder="0" marginheight="0" marginwidth="0" style="max-width: 100%;display: block;
+    margin: auto;">Loading...</iframe>
+    </div>
+
 </div>
 
 <div class="row top-space loan-content max-content" style="display: none;">
@@ -140,7 +148,15 @@
         </linearGradient>
     </defs>
 </svg>
+<script>
+    var src='https://docs.google.com/forms/d/e/1FAIpQLScWCYvpFHoPnrbs8cIwr5xAo5ah9mPzPfbykjErC7fKTbet4Q/viewform?embedded=true';
+    if(localStorage.getItem('lang')==='hi'){
+        src='https://docs.google.com/forms/d/e/1FAIpQLSeJghr0faWvgWMtaLqu75dLWNNoyWDE45T0k4Oso8lQuPxNwg/viewform?embedded=true';
+    }
+    document.getElementById('credit_score_iframe').src=src;
+</script>
 <script id="columntemplate" type="text/x-template">
     <div class="e-icons e-icon-grightarrow e-row-toggle"></div>
     <span style="padding-left: 12px;">${year}</span>
+
 </script>

@@ -143,8 +143,14 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
         var max = loanType === 1 ? 500000 : loanType == 2 ? 9000000 : 1000000;
         var step = loanType === 1 ? 100000 : loanType == 2 ? 1000000 : 100000;
         renderSliderControls();
+        var l1 = 'Year';
+        var l2 = 'Month';
+        if (localStorage.getItem('lang') === 'hi') {
+            l1 = 'साल';
+            l2 = 'महीना';
+        }
         monthValue = new ej2_buttons_1.RadioButton({
-            label: 'Month', name: 'tenure', value: 'month',
+            label: l2, name: 'tenure', value: 'month',
             change: function () {
                 yearTenure = false;
                 var currVal = (tenure.value * 12);
@@ -165,7 +171,7 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
         });
         monthValue.appendTo('#radio1');
         yearValue = new ej2_buttons_1.RadioButton({
-            label: 'Year', name: 'tenure', value: 'year', checked: true,
+            label: l1, name: 'tenure', value: 'year', checked: true,
             change: function () {
                 yearTenure = true;
                 var currVal = (tenure.value / 12);
@@ -663,9 +669,77 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
     }
     window.onhashchange = function () {
     };
+    window.updateText = function () {
+        var lang = localStorage.getItem('lang');
+        if (lang === 'hi') {
+            document.getElementById('loan1').innerText = 'व्यक्तिगत ऋण';
+            document.getElementById('loan2').innerText = 'गृह ऋण';
+            document.getElementById('loan3').innerText = 'कार ऋण';
+            document.getElementById('loan4').innerText = 'फ्री क्रेडिट स्कोर';
+            document.getElementById('loan_amt').innerText = 'ऋण की राशि';
+            document.getElementById('roi_').innerText = 'ब्याज दर';
+            document.getElementById('loan_term').innerText = 'ऋण की अवधि';
+            document.getElementById('break-up').innerText = 'कुल भुगतान का विवरण';
+            try {
+                document.getElementById('radio1').parentElement.getElementsByTagName('span')[0].innerText = 'साल';
+            }
+            catch (e) {
+            }
+            try {
+                document.getElementById('radio2').parentElement.getElementsByTagName('span')[0].innerText = 'महीना';
+            }
+            catch (e) {
+            }
+            document.getElementById('principal_amt').innerText = 'मुख्य राशि';
+            document.getElementById('tot_int').innerText = 'कुल ब्याज';
+            document.getElementById('tot_payment').innerText = 'कुल भुगतान';
+            document.getElementById('tot_payment_sub').innerText = ' (प्रधान + ब्याज)';
+            document.getElementById('ur_monthly_payment').innerText = 'आपका मासिक भुगतान';
+            document.getElementById('credit_score_iframe')
+                .setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLSeJghr0faWvgWMtaLqu75dLWNNoyWDE45T0k4Oso8lQuPxNwg/viewform?embedded=true');
+        }
+        else {
+            document.getElementById('loan1').innerText = 'Personal Loan';
+            document.getElementById('loan2').innerText = 'Home Loan';
+            document.getElementById('loan3').innerText = 'Car Loan';
+            document.getElementById('loan4').innerText = 'Free Credit Score';
+            document.getElementById('loan_amt').innerText = 'Loan Amount';
+            document.getElementById('roi_').innerText = 'Interest Rate';
+            document.getElementById('loan_term').innerText = 'Loan Term';
+            document.getElementById('break-up').innerText = 'Break Up of Total Payment';
+            try {
+                document.getElementById('radio1').parentElement.getElementsByTagName('span')[0].innerText = 'Year';
+            }
+            catch (e) {
+            }
+            try {
+                document.getElementById('radio2').parentElement.getElementsByTagName('span')[0].innerText = 'Month';
+            }
+            catch (e) {
+            }
+            document.getElementById('principal_amt').innerText = 'Principal Amount';
+            document.getElementById('tot_int').innerText = 'Total Interest';
+            document.getElementById('tot_payment').innerText = 'Total Payment ';
+            document.getElementById('tot_payment_sub').innerText = ' (Principal + Interest)';
+            document.getElementById('ur_monthly_payment').innerText = 'Your Monthly Payment';
+            document.getElementById('credit_score_iframe')
+                .setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLScWCYvpFHoPnrbs8cIwr5xAo5ah9mPzPfbykjErC7fKTbet4Q/viewform?embedded=true');
+        }
+    };
     window.default = function () {
-        console.log("sadfgrse1");
+        document.getElementById('credit_score_pane').style.display = 'none';
+        document.getElementById('emi-pane').style.display = 'block';
+        window.updateText();
         init();
+        window.addEventListener('storage', function (e) {
+            console.log("asdfgtfeda");
+            window.updateText();
+        }, false);
+    };
+    window.creditScore = function () {
+        document.getElementById('credit_score_pane').style.display = 'block';
+        document.getElementById('emi-pane').style.display = 'none';
+        window.updateText();
     };
     function destroyComponents() {
         pricipalObj2.destroy();

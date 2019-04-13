@@ -1013,13 +1013,13 @@ a{
 .no-focus-outline button:focus {
   outline: none;
 }
-.mobileShow {display: none;} 
+.mobileShow {display: none;}
 
   @media only screen and (max-width: 600px) {
     .mobileShow {display: inline;
         padding: 0px !important;
         margin: 0px !important;
-        
+
 
     }
   }

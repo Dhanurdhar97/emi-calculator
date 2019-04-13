@@ -12,7 +12,6 @@ define(["require", "exports", "crossroads", "@syncfusion/ej2-base", "hasher"], f
         });
     });
     crossroads_1.addRoute('/default', function () {
-        console.log();
         var ajaxHTML = new ej2_base_1.Ajax('src/default/default.html', 'GET', true);
         ajaxHTML.send().then(function (value) {
             document.getElementById('content').innerHTML = value.toString();
@@ -20,7 +19,6 @@ define(["require", "exports", "crossroads", "@syncfusion/ej2-base", "hasher"], f
         });
     });
     crossroads_1.addRoute('/home-loan', function () {
-        console.log();
         var ajaxHTML = new ej2_base_1.Ajax('src/default/default.html', 'GET', true);
         ajaxHTML.send().then(function (value) {
             document.getElementById('content').innerHTML = value.toString();
@@ -28,7 +26,6 @@ define(["require", "exports", "crossroads", "@syncfusion/ej2-base", "hasher"], f
         });
     });
     crossroads_1.addRoute('/personal-loan', function () {
-        console.log();
         var ajaxHTML = new ej2_base_1.Ajax('src/default/default.html', 'GET', true);
         ajaxHTML.send().then(function (value) {
             document.getElementById('content').innerHTML = value.toString();
@@ -36,11 +33,17 @@ define(["require", "exports", "crossroads", "@syncfusion/ej2-base", "hasher"], f
         });
     });
     crossroads_1.addRoute('/vehicle-loan', function () {
-        console.log();
         var ajaxHTML = new ej2_base_1.Ajax('src/default/default.html', 'GET', true);
         ajaxHTML.send().then(function (value) {
             document.getElementById('content').innerHTML = value.toString();
             window.default();
+        });
+    });
+    crossroads_1.addRoute('/credit-score', function () {
+        var ajaxHTML = new ej2_base_1.Ajax('src/default/default.html', 'GET', true);
+        ajaxHTML.send().then(function (value) {
+            document.getElementById('content').innerHTML = value.toString();
+            window.creditScore();
         });
     });
     hasher.initialized.add(function (h) {
