@@ -132,10 +132,10 @@ define(["require", "exports", "@syncfusion/ej2-inputs", "@syncfusion/ej2-inputs"
     }
     function renderInputControls() {
         var loanType = getLoanType();
-        var selected = document.getElementById('loan' + loanType);
+        var selected = document.getElementById('loana_' + loanType);
         for (var i = 1; i < 4; i++) {
             if (loanType !== i) {
-                document.getElementById('loan' + loanType).classList.remove('activeTab');
+                document.getElementById('loana_' + loanType).classList.remove('activeTab');
             }
         }
         selected.classList.add("activeTab");

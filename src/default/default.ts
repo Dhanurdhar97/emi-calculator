@@ -175,12 +175,12 @@ function renderInputControls(): void {
 
     let loanType=getLoanType();
 
-    let selected=document.getElementById('loan' + loanType);
+    let selected=document.getElementById('loana_' + loanType);
 
 
     for (let i = 1; i < 4; i++) {
         if (loanType !== i) {
-            document.getElementById('loan' + loanType).classList.remove('activeTab');
+            document.getElementById('loana_' + loanType).classList.remove('activeTab');
         }
     }
     selected.classList.add("activeTab");
