@@ -234,7 +234,6 @@ $tick-color: #ABABAB;
 
 .tenure-value {
   display: flex;
-  padding: 4px 5px 4px 10px;
   position: relative;
 
   li {
@@ -1022,6 +1021,18 @@ a{
 
 
     }
+    .emi_pay{
+      margin:0 0 0 0;position: absolute;margin-top: 29rem !important;
+    }
+    .pay_text{
+      text-align: center;font-size: 25px !important;
+    }
+    .apply{
+      background-color:#ffffff;max-width:100%; width: 100%; padding-left: 5% !important;
+    }
+    .total_pay{
+      padding-top:50px !important;
+    }
   }
   .button {
     background-color: #F9BA48;
@@ -1035,4 +1046,15 @@ a{
     font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
+  }
+  .emi_pay{
+    margin:0 0 0 0;position: absolute;margin-top: 35rem;}
+    .pay_text{
+    text-align: center;font-size: 45px
+  }
+  .apply{
+    background-color:#ffffff;max-width:100%; width: 100%; padding-left: 25%;
+  }
+  .total_pay{
+    padding-top:10px !important;
   }

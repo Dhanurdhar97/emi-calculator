@@ -87,30 +87,32 @@
                 </div>
             </div>
         </div><hr>
-        <div class="col-lg-5 emi-content" style="background-color:#ffffff; border-left:2px solid #f2f2f2;">
+        <div class="col-lg-5 emi-content" style="background-color:#ffffff; border-left:2px solid #f2f2f2;" >
             <div>
                 <h6 class="emi-header" id="break-up" style="text-align: center;">Break-up of Total Payment</h6>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                         <div class="col-lg-12 pie-content" id="pieContent" style="padding-top: 5%">
-                            <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; " id="principal_amt">Principal Amount <h5 style="text-align: center" id="loan_principal" ></h5></p></div>
-                             <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; margin-top: 0px;" id="tot_int">Total Interest<h5 style="text-align: center" id="loan_interest"></h5></p></div>
-                              <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
+                            <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; " id="principal_amt">Principal Amount <h5 style="text-align: center; font-size:24px;" id="loan_principal" ></h5></p></div>
+                             <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; margin-top: 0px;" id="tot_int">Total Interest<h5 style="text-align: center;font-size:24px;" id="loan_interest"></h5></p></div>
+                              <div class="col-sm-12 col-lg-12 col-xs-12 total_pay" style="margin:0 0 0 0;" >
                                     <span style="float: center;">
                                         <p style="text-align: center;" id="tot_payment">Total Payment</p>
                                         <p style="font-size:1rem; margin:0 0 0 0;" id="tot_payment_sub">(Principal + Interest)</p>
                                     </span><br>
-                                    <h5 style="text-align: center;margin-top: 0px; " id="loan_total_payment"></h5>
+                                    <h5 style="text-align: center;margin-top: 0px;font-size:30px; " id="loan_total_payment"></h5>
                                 </div>
 
                                     
-                             <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
-                                        <p style="text-align: center;" id="ur_monthly_payment">Your Monthly Payment</p><br class="mobileShow"><h5 style="text-align: center;font-size: 50px" id="loan_emi"></h5>
-                                </div>
-  
+
+
                         </div>
-                    <div id="payment_pieChart" style="position:fixed !important;"></div>
+                    <div id="payment_pieChart" style="position:fixed !important;">
+                        <div class="col-sm-12 col-lg-12 col-xs-12 emi_pay">
+                                <p style="text-align: center;" id="ur_monthly_payment">Your Monthly Payment</p><h5 class="pay_text" id="loan_emi"></h5>
+                        </div>
+                    </div>
                 </div>
                 
             </div>            
