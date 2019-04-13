@@ -4,10 +4,10 @@
 
     <ul class="nav nav-tabs header_class" style="background-color: #ffffff;" >
     
-        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan1' href="#personal-loan">Personal Loan</a></li>
-        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan2' href="#home-loan">Home Loan</a></li>
-        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan3' href="#vehicle-loan">Car Loan</a></li>
-        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan4' href="#credit-score">Free credit score</a></li>
+        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan1' href="#personal-loan"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/loan.png" width="40%"><br>Personal Loan</a></li>
+        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan2' href="#home-loan"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/home_loan.png" width="40%"><br>Home Loan</a></li>
+        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan3' href="#vehicle-loan"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/vehicle.png" width="40%"><br>Car Loan</a></li>
+        <li class="col-sm-6 col-lg-2 col-md-6 col-xs-6" style="text-align:center;"><a id='loan4' href="#credit-score"><img src="https://d31bgfoj87qaaj.cloudfront.net/blog/wp-content/uploads/2017/06/docunent.png" width="40%"><br>Free credit score</a></li>
       </ul></div>
         <div class="left-content col-lg-7">
             <div class="row form-space">
@@ -63,7 +63,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label class="loantenure">Loan Term</label><br>
+                                    <label class="loantenure">Loan Term</label>
                                     <ul class="tenure-value">
                                         <li>
                                             <input type="radio" class="option-input radio" id="radio1" name="tenure" value="month">
@@ -88,28 +88,28 @@
         </div><hr>
         <div class="col-lg-5 emi-content" style="background-color:#ffffff; border-left:2px solid #f2f2f2;">
             <div>
-                <h6 class="emi-header">Break-up of Total Payment</h6>
+                <h6 class="emi-header" style="text-align: center;">Break-up of Total Payment</h6>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                        <div class="col-lg-12 pie-content" id="pieContent">
+                        <div class="col-lg-12 pie-content" id="pieContent" style="padding-top: 5%">
                             <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; ">Principal Amount <h5 style="text-align: center" id="loan_principal" ></h5></p></div>   
                              <div class="col-sm-12 col-lg-6 col-xs-6" style="margin:0 0 0 0;"><p style="text-align: center; margin-top: 0px;">Total Interest<h5 style="text-align: center" id="loan_interest"></h5></p></div>  
                               <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
                                     <span style="float: center;">
-                                        <p style="text-align: center">Total Payment</p>
+                                        <p style="text-align: center;">Total Payment</p>
                                         <p style="font-size:1rem; margin:0 0 0 0;">(Principal + Interest)</p>
-                                    </span>
+                                    </span><br>
                                     <h5 style="text-align: center;margin-top: 0px; " id="loan_total_payment"></h5>
                                 </div>
 
                                     
                              <div class="col-sm-12 col-lg-12 col-xs-12" style="margin:0 0 0 0;">
-                                        <p style="text-align: center;">Your Monthly Payment</p><h5 style="text-align: center;" id="loan_emi"></h5>
+                                        <p style="text-align: center;">Your Monthly Payment</p><br class="mobileShow"><h5 style="text-align: center;font-size: 50px" id="loan_emi"></h5>
                                 </div>
   
                         </div>
-                    <div id="payment_pieChart"></div>
+                    <div id="payment_pieChart" style="position:fixed !important;"></div>
                 </div>
                 
             </div>            

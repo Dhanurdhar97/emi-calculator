@@ -2,7 +2,7 @@
 $border-color: #e4e2e2;
 $bg-color: #f2f2f2;
 $body-bg-color: #f2f2f2;
-$header-bg-color:#1976D2;
+$header-bg-color:#F9BA48;
 $header-font-color: rgb(255, 255, 255);
 $input-bg-color: #f2f2f2;
 $input-font-color: #000;
@@ -13,7 +13,7 @@ $text-color: #000000;
 $text-color1: #989CA9;
 $text-color2: #000000;
 $header-color: #4a4a4a 100%;
-$range-color: #2196F3;
+$range-color: #F9BA48;
 $slider-color: #f8f8f8;
 $row-bg-color: #27304c;
 $altrow-bg-color: #313B5A;
@@ -197,7 +197,6 @@ $tick-color: #ABABAB;
     font-size: 18px;
     @include Roboto-500();
     color: $text-color2;
-    padding: 5px 0 10px;
     text-align: center;
   }
 
@@ -344,7 +343,7 @@ li {
         border-radius: 30px;
         box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.12);
         border: solid 4px #ffffff;
-        background-color: #2196F3;
+        background-color: #F9BA48;
 
         &::before {
           content: '';
@@ -556,11 +555,11 @@ li {
 }
 
 #interest_svg stop[offset="0"] {
-    stop-color:#1976D2;
+    stop-color:rgb(255, 196, 0);
 }
 
 #interest_svg stop[offset="1"] {
-    stop-color: #1976D2;
+    stop-color: rgb(247, 195, 100);
 }
 
 .navbar-right {
@@ -918,24 +917,24 @@ body {
 
 }
 a{
-  color:#1976D2;
+  color:#000000;
   font-size: 16px;
-  font-weight: 400;
+  @include Raleway-600();
 }
 .activeTab{
-  background:#1976D2;
-  color:#ffffff !important;
+  background:#f2f2f2;
+  color:#000000 !important;
 }
 .activeTab:hover{
   background:#1976D2;
-  color:#ffffff !important;
+  color:#000000 !important;
 }
 .nav>li>a{
   padding: 10px 7px !important;
 }
 .nav>li>a:hover{
-  background:#1976D2;
-  color:#ffffff !important;
+  background:#f2f2f2;
+  color:#000000 !important;
 }
 *{font-family: 'Roboto', sans-serif;}
 
@@ -983,7 +982,7 @@ a{
   background: #9faab7;
 }
 .option-input:checked {
-  background: #2196F3;
+  background: #F9BA48;
 }
 .option-input:checked::before {
   height: 20px;
@@ -995,7 +994,7 @@ a{
   text-align: center;
 }
 .option-input:checked::after {
-  background: #2196F3;
+  background: #F9BA48;
   content: '';
   display: block;
   position: relative;
@@ -1014,3 +1013,26 @@ a{
 .no-focus-outline button:focus {
   outline: none;
 }
+.mobileShow {display: none;} 
+
+  @media only screen and (max-width: 600px) {
+    .mobileShow {display: inline;
+        padding: 0px !important;
+        margin: 0px !important;
+        
+
+    }
+  }
+  .button {
+    background-color: #F9BA48;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 48px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
